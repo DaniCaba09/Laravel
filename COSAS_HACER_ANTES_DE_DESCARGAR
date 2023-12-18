@@ -1,0 +1,40 @@
+ANTES DE DESCARGAR LARAVEL, DEBEMOS:
+
+DESCARGAR COMPOSER.exe
+
+CERRAR VISUAL, ABRIR TERMINAL NUEVA EN VISUAL.
+
+dentro del php.ini buscar el "; extension=zip" y borrar el ; para que se cree mas rapido. Guardar y crear el proyecto.
+
+USAR EL COMANDO :   composer create-project --prefer-dist laravel/laravel nombre-del-proyecto
+
+cd nombre-del-proyecto
+
+
+use App\Http\Controllers\TuControlador;
+Route::get('/mi-endpoint', [TuControlador::class, 'miMetodo']);
+
+php artisan make:controller TuControlador
+
+abrir php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class TuControlador extends Controller
+{
+    public function miMetodo(Request $request)
+    {
+        // Lógica para manejar la petición AJAX
+        return response()->json(['mensaje' => 'Petición AJAX recibida']);
+    }
+}
+
+cerrar php
+
+Abre la vista donde deseas colocar tu botón. Puedes encontrar vistas en el directorio resources/views.
+Agrega un botón y un script AJAX para hacer la petición:
+
+Po ultimo en la terminal "php artisan serve"
+
